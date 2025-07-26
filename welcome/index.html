@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OKX Wallet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+  <link rel="stylesheet" href="/assets/css/welcome.css">
+</head>
+<body>
+  <section class="welcome-page">
+    <!-- Ganti src dengan link gambar kamu jika beda -->
+    <div class="welcome-hero">
+      <img src="/assets/img/wallet-okx.png" alt="OKX Wallet Illustration" class="welcome-img">
+    </div>
+
+    <div class="welcome-title-group">
+      <h1 class="welcome-title">Welcome to OKEx<br>Let's explore Web3</h1>
+      <div class="welcome-checkbox-row">
+        <input type="checkbox" id="defaultWallet" checked>
+        <label for="defaultWallet"><strong>Set OKEx Wallet as default wallet</strong></strong></label>
+      </div>
+    </div>
+    <button class="welcome-btn" id="startBtn">Your Web3 Journey Begins</button>
+  </section>
+
+  <script>
+    document.getElementById('startBtn').onclick = function() {
+      window.location.href = 'https://play.google.com/store/apps/details?id=com.okx.wallet'; 
+    }
+  </script>
+</body>
+</html>

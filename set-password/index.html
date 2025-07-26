@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OKX Wallet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+  <link rel="stylesheet" href="/assets/css/set-password.css">
+</head>
+<body>
+  <!-- PAGE 1: Secure your wallet -->
+  <section class="page page-secure active" id="pageSecure">
+    <button class="back-btn" id="backSecureBtn" aria-label="Back">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </button>
+    <h1 class="main-title">Secure your wallet</h1>
+    <p class="subtitle">Select your preferred security method.</p>
+    <div class="card-password selected">
+      <div class="pw-label-row">
+        <div>
+          <div class="pw-label">Password</div>
+          <div class="pw-desc">Create a password to protect your wallet.</div>
+          <span class="pw-recommend">Recommended</span>
+        </div>
+        <span class="pw-check">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="14" fill="#111"/>
+            <polyline points="19 10.5 12.2 17 9.5 14.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </div>
+    </div>
+    <button class="btn-next" id="nextBtn">Next</button>
+  </section>
+  
+  <!-- PAGE 2: Set password -->
+  <section class="page page-setpw" id="pageSetPw">
+    <button class="back-btn" id="backSetPwBtn" aria-label="Back">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </button>
+    <h1 class="main-title">Set password</h1>
+    <p class="subtitle">
+      Set a password to manage your wallet. Please note that we will not recover your password.<br>
+      <a href="https://web3.okx.com/id/help/forget-password-okx-wallet" class="learn-more">Learn more</a>
+    </p>
+    <form id="formSetPw" autocomplete="off">
+      <div class="form-group">
+        <label>Password</label>
+        <div class="input-wrap">
+          <input type="password" id="password" placeholder="Enter at least 8 characters" minlength="8" required>
+          <button type="button" class="eye-toggle" data-toggle="password" aria-label="Show password">
+            <!-- Eye off (default) -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon-eye" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
+              <path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" />
+              <path d="M3 3l18 18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Confirm New Password</label>
+        <div class="input-wrap">
+          <input type="password" id="password2" placeholder="Re-enter new password" minlength="8" required>
+          <button type="button" class="eye-toggle" data-toggle="password2" aria-label="Show password">
+            <!-- Eye off (default) -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon-eye" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
+              <path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" />
+              <path d="M3 3l18 18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </form>
+    <button class="btn-confirm" id="confirmPwBtn" disabled>Confirmation</button>
+  </section>
+  
+  <script src="/assets/js/set-password.js"></script>
+</body>
+</html>

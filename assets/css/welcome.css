@@ -1,0 +1,173 @@
+/* === Base ================================================================= */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: 'Inter', Arial, sans-serif;
+  min-height: 100vh;
+  height: 100vh;
+}
+
+/* Gunakan height dinamis bila browser mendukung */
+@supports (height: 100dvh) {
+  body,
+  html {
+    min-height: 100dvh;
+    height: 100dvh;
+  }
+}
+
+/* === Layout wrapper ======================================================= */
+.welcome-page {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding: 0;
+}
+
+@supports (height: 100dvh) {
+  .welcome-page {
+    min-height: 100dvh;
+    height: 100dvh;
+  }
+}
+
+/* === Hero image =========================================================== */
+.welcome-hero {
+  width: 100%;
+  text-align: center;
+  margin: 80px 0 70px;
+}
+
+.welcome-page .welcome-img {
+  transform: scale(1.25);       /* 25 % lebih besar di mobile */
+  transform-origin: center top;
+}
+
+/* === Title & copy ========================================================= */
+.welcome-title-group { width: 100%; text-align: center; }
+
+.welcome-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1.21;
+  margin: 1px 0 50px;
+  color: #111;
+}
+
+/* === Checkbox row ========================================================= */
+.welcome-checkbox-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1.11rem;
+  margin-bottom: 42px;
+}
+
+.welcome-checkbox-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #111;
+  margin-right: 5px;
+}
+
+@media (max-width: 480px) {
+  .welcome-checkbox-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* === Call-to-action button =============================================== */
+.welcome-btn {
+  width: clamp(260px, 95vw, 560px);
+  max-width: 560px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 22px 0;
+  border: none;
+  border-radius: 9999px;        /* pill penuh */
+  background: #111 !important;  /* hitam solid */
+  color: #fff !important;       /* teks putih */
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: clamp(56px, 8vh, calc(env(safe-area-inset-bottom,0px) + 100px));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: none;
+  letter-spacing: 0.01em;
+  z-index: 9;
+  -webkit-appearance: none;
+}
+
+.welcome-btn:active,
+.welcome-btn:focus-visible {
+  background: #000 !important;
+}
+
+.welcome-btn:disabled {
+  background: #777 !important;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* === Mobile XS tweaks ===================================================== */
+@media (max-width: 480px) {
+  .welcome-img   { width: 100%; max-width: 330px; }
+  .welcome-btn   {
+    width: 95vw;
+    font-size: 1.14rem;
+    padding: 16px 0;
+    border-radius: 40px;
+  }
+  .welcome-checkbox-row label { font-size: 1rem; }
+}
+
+/* === Tablet / Desktop ===================================================== */
+@media (min-width: 900px) {
+  .welcome-page {
+    width: 420px;
+    min-height: 600px;
+    max-width: 98vw;
+    max-height: 95vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 18px;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, .08);
+    padding: 60px 32px 90px;      /* ruang untuk tombol */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+  }
+
+  .welcome-hero { margin: 52px 0 22px; overflow: hidden; }
+
+  .welcome-page .welcome-img {
+    transform: none !important;   /* batalkan scale di desktop */
+    width: 94%;
+    max-width: 380px;
+    height: auto;
+  }
+
+  .welcome-title          { font-size: 2.4rem; margin-bottom: 30px; }
+  .welcome-checkbox-row   { font-size: 1.15rem; margin-bottom: 52px; }
+
+  .welcome-btn {
+    position: absolute;
+    bottom: 32px;
+    width: 380px;
+    max-width: 90%;
+  }
+}

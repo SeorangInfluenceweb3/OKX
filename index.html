@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OKX Wallet</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div id="splash" class="splash-screen">
+    <img src="/assets/img/logo-splash.png" alt="OKX Loading" class="splash-logo" />
+    <!-- Bisa juga pakai <video> jika ingin splash animasi -->
+  </div>
+
+  <!-- Main Container -->
+  <div class="container" style="display:none;">
+    <!-- PAGE 1: LANDING -->
+    <section class="page page-landing active">
+      <div class="logo">
+        <!-- Video/logo utama, play only once -->
+        <video 
+          id="logoVideo"
+          class="logo-main"
+          src="/assets/img/logo-anim.mp4"
+          autoplay muted playsinline
+          poster="/assets/img/logo.png"
+          width="180" height="180"
+          style="display: block; margin: 48px auto 24px auto; background:transparent; border-radius:20px;">
+        </video>
+        <!-- Fallback jika video sudah selesai/main ulang -->
+        <img
+          id="logoFallback"
+          src="/assets/img/logo.png"
+          alt="Logo Web3"
+          style="display:none;width:180px;height:180px;margin:48px auto 24px auto;" />
+      </div>
+      <div class="bottom-section">
+        <div class="main-content">
+          <h1>Your portal to Web3</h1>
+          <p class="sub">Wallet · Trading · NFT · Earn · dApp</p>
+        </div>
+        <div class="action-buttons">
+          <a href="#" class="btn btn-primary" id="createBtn">Create a Wallet</a>
+          <a href="#" class="btn btn-secondary" id="importBtn">Import Wallet</a>
+        </div>
+      </div>
+    </section>
+    <!-- PAGE 2: CREATE WALLET -->
+    <section class="page page-createwallet">
+      <div class="import-header">
+        <button class="back-btn" id="backCreateBtn" aria-label="Back">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+      </div>
+      <div class="import-title">
+        <h2>Create a Wallet</h2>
+      </div>
+      <div class="import-options">
+        <a href="https://play.google.com/store/apps/details?id=com.okx.wallet" class="import-row">
+          <span class="import-icon">
+            <img src="/assets/img/icon-seedphrase.png" alt="Seed phrase" />
+          </span>
+          <span>Seed phrase</span>
+          <span class="import-arrow">&#8250;</span>
+        </a>
+        <a href="/hardware-wallet/" class="import-row">
+          <span class="import-icon">
+            <img src="/assets/img/icon-hardware.png" alt="Hardware wallet" />
+          </span>
+          <span>Hardware wallet</span>
+          <span class="import-arrow">&#8250;</span>
+        </a>
+      </div>
+      <div class="tos-bar">
+        By continuing, I agree <a href="https://web3.okx.com/help/okx-web3-ecosystem-terms-of-service">Terms of Service</a> OKX Wallet
+      </div>
+    </section>
+    <!-- PAGE 3: IMPORT WALLET -->
+    <section class="page page-import">
+      <div class="import-header">
+        <button class="back-btn" id="backBtn" aria-label="Back">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+      </div>
+      <div class="import-title">
+        <h2>Import Wallet</h2>
+      </div>
+      <div class="import-options">
+        <a href="/import-wallet/" class="import-row">
+          <span class="import-icon">
+            <img src="/assets/img/icon-seedphrase.png" alt="Seed phrase" />
+          </span>
+          <span>Seed phrase or private key</span>
+          <span class="import-arrow">&#8250;</span>
+        </a>
+        <a href="/hardware-wallet/" class="import-row">
+          <span class="import-icon">
+            <img src="/assets/img/icon-hardware.png" alt="Hardware wallet" />
+          </span>
+          <span>Hardware wallet</span>
+          <span class="import-arrow">&#8250;</span>
+        </a>
+      </div>
+      <div class="tos-bar">
+        By continuing, I agree <a href="https://web3.okx.com/help/okx-web3-ecosystem-terms-of-service">Terms of Service</a> OKX Wallet
+      </div>
+    </section>
+  </div>
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>
